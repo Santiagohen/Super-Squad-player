@@ -70,7 +70,8 @@ app.post('/submit-form', async (req, res) => {
 
         // Save updated users
         await fs.writeFile(dataPath, JSON.stringify(users, null, 2));
-        res.redirect('/form');
+        res.redirect('/form')
+            console.log(users);
     } catch (error) {
         console.error('Error processing form:', error);
         res.status(500).send('An error occurred while processing your submission.');
