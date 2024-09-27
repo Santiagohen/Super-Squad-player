@@ -70,8 +70,10 @@ app.post('/submit-form', async (req, res) => {
 
         // Save updated users
         await fs.writeFile(dataPath, JSON.stringify(users, null, 2));
+
         res.redirect('/form')
-            console.log(users);
+        console.log(users);
+
     } catch (error) {
         console.error('Error processing form:', error);
         res.status(500).send('An error occurred while processing your submission.');
@@ -129,7 +131,7 @@ app.delete('/user/:name/:email', async (req, res) => {
         if (userIndex === -1) {
             return res.status(404)
         }
-        
+
         //handle when user doesn't exist
         users.splice(userIndex, 1)
 
@@ -138,7 +140,7 @@ app.delete('/user/:name/:email', async (req, res) => {
         } catch (error) {
             console.error("failed to wrtie to the database get better my sigma")
         }
-            console.log(userIndex)
+        console.log(userIndex)
         console.log(users);
         return res.send('sigma deletion good job +20000 aura')
         // as destructured variables from params
@@ -156,7 +158,7 @@ app.delete('/user/:name/:email', async (req, res) => {
         // send a success deleted message
     } catch (error) {
         res.status(500).send("There was an skkibidi problem my fello rizzler")
-     }
+    }
 });
 
 // Start the server
