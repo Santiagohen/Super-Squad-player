@@ -46,7 +46,7 @@ app.get('/form', (req, res) => {
 // Form submission route
 app.post('/submit-form', async (req, res) => {
     try {
-        const { name, email, message } = req.body;
+        const { name, email, message, } = req.body;
 
         // Read existing users from file
         let users = [];
